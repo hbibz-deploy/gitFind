@@ -1,30 +1,29 @@
-$(document).ready(function(){
-  $('#searchUser').on('keyup', function(e){
+$(document).ready(function () {
+  $('#searchUser').on('keyup', function (e) {
     let username = e.target.value;
 
-    // Make request to Github
     $.ajax({
-      url:'https://api.github.com/users/'+username,
-      data:{
-        client_id:'97b26d4e8ed886bd89fa',
-        client_secret:'f5ebe96125addf1d85c64d0c72f810011da3401f'
+      url: 'https://api.github.com/users/' + username,
+      data: {
+        client_id: '97b26d4e8ed886bd89fa',
+        client_secret: 'f5ebe96125addf1d85c64d0c72f810011da3401f'
       }
-    }).done(function(user){
+    }).done(function (user) {
       $.ajax({
-        url:'https://api.github.com/users/'+username+'/repos',
-        data:{
-          client_id:'97b26d4e8ed886bd89fa',
-          client_secret:'f5ebe96125addf1d85c64d0c72f810011da3401f',
+        url: 'https://api.github.com/users/' + username + '/repos',
+        data: {
+          client_id: '97b26d4e8ed886bd89fa',
+          client_secret: 'f5ebe96125addf1d85c64d0c72f810011da3401f',
           sort: 'created: asc',
           per_page: 5
         }
-      }).done(function(repos){
-        $.each(repos, function(index, repo){
+      }).done(function (repos) {
+        $.each(repos, function (index, repo) {
           $('#repos').append(`
             <div class="well">
               <div class="row">
                 <div class="col-md-7">
-                  <strong>${repo.name}</strong>: ${repo.description}
+                  <strong>${repo.name}</strong>: ${repo.description || "Description not available"}
                 </div>
                 <div class="col-md-3">
                   <span class="label label-default">Forks: ${repo.forks_count}</span>
@@ -42,7 +41,12 @@ $(document).ready(function(){
       $('#profile').html(`
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">${user.name}</h3>
+          <center>
+          <h3 class=""></h3>
+          <div class="alert alert-primary centerize">
+          ${user.name}
+</div>
+          </center>
           </div>
           <div class="panel-body">
             <div class="row">
@@ -57,9 +61,9 @@ $(document).ready(function(){
               <span class="label label-info">Following: ${user.following}</span>
               <br><br>
               <ul class="list-group">
-                <li class="list-group-item">Company: ${user.company}</li>
-                <li class="list-group-item">Website/blog: <a href="${user.blog}" target="_blank">${user.blog}</a></li>
-                <li class="list-group-item">Location: ${user.location}</li>
+                <li class="list-group-item">Company: ${user.company || "Not specified"}</li>
+                <li class="list-group-item">Website/blog: <a href="${user.blog || "#"}" target="_blank">${user.blog || "Not specified"}</a></li>
+                <li class="list-group-item">Location: ${user.location || "Not specified"}</li>
                 <li class="list-group-item">Member Since: ${user.created_at}</li>
               </ul>
               </div>
@@ -71,4 +75,16 @@ $(document).ready(function(){
       `);
     });
   });
+});
+document.getElementById("resetBtn").style.visibility = "hidden";
+document.getElementById("searchUser").addEventListener("input", (e) => {
+  document.getElementById("resetBtn").style.visibility = "visible";
+  if (e.target.value === "") {
+    document.getElementById("resetBtn").style.visibility = "hidden";
+    console.log(e.target.value)
+  }else{
+    document.getElementById("resetBtn").addEventListener(
+      'click', () => { e.target.value = ""}
+    )
+  }
 });

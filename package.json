@@ -1,0 +1,22 @@
+{
+  "name": "gitfind",
+  "version": "1.0.0",
+  "description": "Find out more about github users in a user friendly way.",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hbibz-deploy/gitFind.git"
+  },
+  "author": "Brad & Muhammad",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hbibz-deploy/gitFind/issues"
+  },
+  "homepage": "https://github.com/hbibz-deploy/gitFind#readme",
+  "dependencies": {
+    "serve": "^9.1.0"
+  }
+}
