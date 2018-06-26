@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
     $('body').append('<div id="toTop" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-up"></span> Back to Top</div>');
     	$(window).scroll(function () {
@@ -83,7 +85,7 @@ $(document).ready(function () {
             </div>
           </div>
         </div>
-        <h3 class="page-header">Latest Repos</h3>
+        <h3 class="page-header"><span class="fas fa-folder-open"></span> Latest Repositories</h3>
         <div id="repos"></div>
       `);
     });
