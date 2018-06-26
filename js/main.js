@@ -44,6 +44,7 @@ $(document).ready(function () {
           <center>
           <h3 class=""></h3>
           <div class="alert alert-primary centerize">
+          <span class="far fa-user-circle"></span>
           ${user.name}
 </div>
           </center>
