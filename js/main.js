@@ -23,7 +23,7 @@ $(document).ready(function () {
             <div class="well">
               <div class="row">
                 <div class="col-md-7">
-                  <strong>${repo.name}</strong>: ${repo.description || "Description not available"}
+                  <strong>${repo.name}</strong>:<br/><span class="fas fa-code-branch"></span> ${repo.description || "Description not available"}
                 </div>
                 <div class="col-md-3">
                   <span class="label label-default">Forks: ${repo.forks_count}</span>
