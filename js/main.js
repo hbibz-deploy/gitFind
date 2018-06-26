@@ -24,7 +24,6 @@ $(document).ready(function () {
               <div class="row">
                 <div class="col-md-7">
                   <strong>${repo.name}</strong>:<br/><span class="fas fa-code-branch"></span> ${repo.description || "Description not available <span class="fas fa-exclamation"></span>
-
 "}
                 </div>
                 <div class="col-md-3">
