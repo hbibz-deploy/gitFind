@@ -23,7 +23,7 @@ $(document).ready(function () {
             <div class="well">
               <div class="row">
                 <div class="col-md-7">
-                  <strong>${repo.name}</strong>:<br/><span class="fas fa-code-branch"></span> ${repo.description || "Description not available <span class="fas fa-exclamation"></span>"}
+                  <strong>${repo.name}</strong>:<br/><span class="fas fa-code-branch"></span> ${repo.description || "Description not available"}
                 </div>
                 <div class="col-md-3">
                   <span class="label label-default">Forks: ${repo.forks_count}</span>
@@ -62,9 +62,9 @@ $(document).ready(function () {
               <span class="label label-info">Following: ${user.following}</span>
               <br><br>
               <ul class="list-group">
-                <li class="list-group-item">Company: ${user.company || "Not specified <span class="fas fa-exclamation"></span>"}</li>
-                <li class="list-group-item">Website/blog: <a href="${user.blog || "#"}" target="_blank">${user.blog || "Not specified <span class="fas fa-exclamation"></span>"}</a></li>
-                <li class="list-group-item">Location: ${user.location || "Not specified <span class="fas fa-exclamation"></span>"}</li>
+                <li class="list-group-item">Company: ${user.company || "Not specified "}</li>
+                <li class="list-group-item">Website/blog: <a href="${user.blog || "#"}" target="_blank">${user.blog || "Not specified"}</a></li>
+                <li class="list-group-item">Location: ${user.location || "Not specified"}</li>
                 <li class="list-group-item">Member Since: ${user.created_at}</li>
               </ul>
               </div>
