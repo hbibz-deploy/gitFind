@@ -31,7 +31,10 @@
 
       <div class="searchContainer">
         <h1><span class="fab fa-github"></span> Github search now</h1>
-        <p class="lead animated">Find out more about github users in a user friendly way</p>
+        <p class="lead animated">Find out more about github users 
+        <span class="typer" id="some-id" data-delay="100" data-delim=":" data-words="in a user friendly way:on the fly:using github API"></span>
+          <span class="cursor" data-cursorDisplay="_"></span> .</p>
+        
         <form class="form-inline">
           <input type="text" id="searchUser" class="form-control" placeholder="Github Username...">
       </div>
@@ -47,6 +50,7 @@
   <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
+  <script src='js/typer.js'></script>
 </body>
 
 </html>
