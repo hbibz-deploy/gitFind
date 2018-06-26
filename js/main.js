@@ -85,7 +85,7 @@ $(document).ready(function () {
             </div>
           </div>
         </div>
-        <h3 class="page-header"><span class="fas fa-folder-open"></span> Latest Repositories</h3>
+        <h3 class="page-header">&nbsp;&nbsp;<span class="fas fa-folder-open"></span> Latest Repositories</h3>
         <div id="repos"></div>
       `);
     });
