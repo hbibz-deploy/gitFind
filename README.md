@@ -16,6 +16,7 @@ python -m SimpleHTTPServer
 Example2: serve package
 ```bash
 npm install
+npm install -g serve
 npm start
 ```
 
